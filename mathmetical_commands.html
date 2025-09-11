@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Learn JavaScript Mathematics</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+                line-height: 1.6;
+            }
+            .section {
+                margin-bottom: 30px;
+                padding: 20px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+            .code-example {
+                background-color: #f5f5f5;
+                padding: 15px;
+                border-radius: 5px;
+                font-family: monospace;
+                margin: 10px 0;
+            }
+            .interactive {
+                margin: 15px 0;
+                padding: 15px;
+                background-color: #f0f8ff;
+                border-radius: 5px;
+            }
+            input {
+                padding: 5px;
+                margin: 0 5px;
+                width: 60px;
+            }
+            button {
+                padding: 5px 10px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 3px;
+                cursor: pointer;
+            }
+            button:hover {
+                background-color: #45a049;
+            }
+            .result {
+                font-weight: bold;
+                color: #2196F3;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Learn JavaScript Mathematics</h1>
+        <p>Welcome to the interactive mathematics learning page! Here you can learn about different mathematical operations in JavaScript and try them out yourself.</p>
+
+        <!-- Basic Arithmetic Section -->
+        <div class="section">
+            <h2>Basic Arithmetic Operations</h2>
+            
+            <!-- Addition -->
+            <h3>Addition</h3>
+            <p>Addition combines two numbers into their sum.</p>
+            <div class="code-example">
+                function add(a, b) {<br>
+                &nbsp;&nbsp;return a + b;<br>
+                }
+            </div>
+            <div class="interactive">
+                <label>Try it: </label>
+                <input type="number" id="add1" value="1"> +
+                <input type="number" id="add2" value="2">
+                <button onclick="calculateAdd()">Calculate</button>
+                <p>Result: <span id="addition" class="result"></span></p>
+            </div>
+
+            <!-- Subtraction -->
+            <h3>Subtraction</h3>
+            <p>Subtraction finds the difference between two numbers.</p>
+            <div class="code-example">
+                function subtract(a, b) {<br>
+                &nbsp;&nbsp;return a - b;<br>
+                }
+            </div>
+            <div class="interactive">
+                <label>Try it: </label>
+                <input type="number" id="sub1" value="1"> -
+                <input type="number" id="sub2" value="2">
+                <button onclick="calculateSubtract()">Calculate</button>
+                <p>Result: <span id="subtraction" class="result"></span></p>
+            </div>
+
+            <!-- Multiplication -->
+            <h3>Multiplication</h3>
+            <p>Multiplication finds the product of two numbers.</p>
+            <div class="code-example">
+                function multiply(a, b) {<br>
+                &nbsp;&nbsp;return a * b;<br>
+                }
+            </div>
+            <div class="interactive">
+                <label>Try it: </label>
+                <input type="number" id="mul1" value="2"> ×
+                <input type="number" id="mul2" value="2">
+                <button onclick="calculateMultiply()">Calculate</button>
+                <p>Result: <span id="multiplication" class="result"></span></p>
+            </div>
+
+            <!-- Division -->
+            <h3>Division</h3>
+            <p>Division finds the quotient of two numbers. Note: Cannot divide by zero!</p>
+            <div class="code-example">
+                function divide(a, b) {<br>
+                &nbsp;&nbsp;if (b === 0) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;throw new Error("Cannot divide by zero!");<br>
+                &nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;return a / b;<br>
+                }
+            </div>
+            <div class="interactive">
+                <label>Try it: </label>
+                <input type="number" id="div1" value="2"> ÷
+                <input type="number" id="div2" value="2">
+                <button onclick="calculateDivide()">Calculate</button>
+                <p>Result: <span id="division" class="result"></span></p>
+            </div>
+        </div>
+
+        <!-- Advanced Operations Section -->
+        <div class="section">
+            <h2>Advanced Operations</h2>
+
+            <!-- Power -->
+            <h3>Power (Exponentiation)</h3>
+            <p>Raises a number to the power of another number.</p>
+            <div class="code-example">
+                function power(base, exponent) {<br>
+                &nbsp;&nbsp;return Math.pow(base, exponent);<br>
+                }
+            </div>
+            <div class="interactive">
+                <label>Try it: </label>
+                <input type="number" id="pow1" value="2"> to the power of
+                <input type="number" id="pow2" value="2">
+                <button onclick="calculatePower()">Calculate</button>
+                <p>Result: <span id="power" class="result"></span></p>
+            </div>
+
+            <!-- Square Root -->
+            <h3>Square Root</h3>
+            <p>Finds the square root of a number. Note: Cannot calculate square root of negative numbers!</p>
+            <div class="code-example">
+                function squareRoot(number) {<br>
+                &nbsp;&nbsp;if (number < 0) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;throw new Error("Cannot calculate square root of negative number!");<br>
+                &nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;return Math.sqrt(number);<br>
+                }
+            </div>
+            <div class="interactive">
+                <label>Try it: </label>
+                <input type="number" id="sqrt1" value="4">
+                <button onclick="calculateSquareRoot()">Calculate</button>
+                <p>Result: <span id="squareRoot" class="result"></span></p>
+            </div>
+
+            <!-- Absolute Value -->
+            <h3>Absolute Value</h3>
+            <p>Returns the positive value of a number.</p>
+            <div class="code-example">
+                function absolute(number) {<br>
+                &nbsp;&nbsp;return Math.abs(number);<br>
+                }
+            </div>
+            <div class="interactive">
+                <label>Try it: </label>
+                <input type="number" id="abs1" value="-2">
+                <button onclick="calculateAbsolute()">Calculate</button>
+                <p>Result: <span id="absolute" class="result"></span></p>
+            </div>
+        </div>
+
+        <!-- Rounding Operations Section -->
+        <div class="section">
+            <h2>Rounding Operations</h2>
+
+            <!-- Round -->
+            <h3>Round</h3>
+            <p>Rounds a number to the nearest integer.</p>
+            <div class="code-example">
+                function round(number) {<br>
+                &nbsp;&nbsp;return Math.round(number);<br>
+                }
+            </div>
+            <div class="interactive">
+                <label>Try it: </label>
+                <input type="number" id="round1" value="3.7" step="0.1">
+                <button onclick="calculateRound()">Round</button>
+                <p>Result: <span id="round" class="result"></span></p>
+            </div>
+
+            <!-- Ceil -->
+            <h3>Ceiling</h3>
+            <p>Rounds a number up to the nearest integer.</p>
+            <div class="code-example">
+                function ceil(number) {<br>
+                &nbsp;&nbsp;return Math.ceil(number);<br>
+                }
+            </div>
+            <div class="interactive">
+                <label>Try it: </label>
+                <input type="number" id="ceil1" value="3.2" step="0.1">
+                <button onclick="calculateCeil()">Round Up</button>
+                <p>Result: <span id="ceil" class="result"></span></p>
+            </div>
+
+            <!-- Floor -->
+            <h3>Floor</h3>
+            <p>Rounds a number down to the nearest integer.</p>
+            <div class="code-example">
+                function floor(number) {<br>
+                &nbsp;&nbsp;return Math.floor(number);<br>
+                }
+            </div>
+            <div class="interactive">
+                <label>Try it: </label>
+                <input type="number" id="floor1" value="3.8" step="0.1">
+                <button onclick="calculateFloor()">Round Down</button>
+                <p>Result: <span id="floor" class="result"></span></p>
+            </div>
+
+            <!-- Truncate -->
+            <h3>Truncate</h3>
+            <p>Removes decimal places from a number.</p>
+            <div class="code-example">
+                function truncate(number, decimals = 0) {<br>
+                &nbsp;&nbsp;const factor = Math.pow(10, decimals);<br>
+                &nbsp;&nbsp;return Math.trunc(number * factor) / factor;<br>
+                }
+            </div>
+            <div class="interactive">
+                <label>Try it: </label>
+                <input type="number" id="trunc1" value="3.456" step="0.001">
+                Keep <input type="number" id="trunc2" value="2" min="0" max="5" style="width: 40px"> decimal places
+                <button onclick="calculateTruncate()">Truncate</button>
+                <p>Result: <span id="truncate" class="result"></span></p>
+            </div>
+        </div>
+
+        <!-- Random Numbers Section -->
+        <div class="section">
+            <h2>Random Numbers</h2>
+
+            <!-- Random Between -->
+            <h3>Random Number (Decimal)</h3>
+            <p>Generates a random decimal number between min (inclusive) and max (exclusive).</p>
+            <div class="code-example">
+                function randomBetween(min, max) {<br>
+                &nbsp;&nbsp;return Math.random() * (max - min) + min;<br>
+                }
+            </div>
+            <div class="interactive">
+                <label>Try it: Between </label>
+                <input type="number" id="rand1" value="0"> and
+                <input type="number" id="rand2" value="10">
+                <button onclick="calculateRandomBetween()">Generate</button>
+                <p>Result: <span id="random" class="result"></span></p>
+            </div>
+
+            <!-- Random Integer Between -->
+            <h3>Random Integer</h3>
+            <p>Generates a random integer between min and max (both inclusive).</p>
+            <div class="code-example">
+                function randomIntBetween(min, max) {<br>
+                &nbsp;&nbsp;min = Math.ceil(min);<br>
+                &nbsp;&nbsp;max = Math.floor(max);<br>
+                &nbsp;&nbsp;return Math.floor(Math.random() * (max - min + 1)) + min;<br>
+                }
+            </div>
+            <div class="interactive">
+                <label>Try it: Between </label>
+                <input type="number" id="randInt1" value="1"> and
+                <input type="number" id="randInt2" value="6">
+                <button onclick="calculateRandomIntBetween()">Generate</button>
+                <p>Result: <span id="randomInt" class="result"></span></p>
+            </div>
+        </div>
+
+        <!-- Logarithmic Operations Section -->
+        <div class="section">
+            <h2>Logarithmic Operations</h2>
+
+            <!-- Natural Log -->
+            <h3>Natural Logarithm</h3>
+            <p>Calculates the natural logarithm (base e) of a number.</p>
+            <div class="code-example">
+                function log(number) {<br>
+                &nbsp;&nbsp;if (number <= 0) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;throw new Error("Cannot calculate logarithm of zero or negative number!");<br>
+                &nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;return Math.log(number);<br>
+                }
+            </div>
+            <div class="interactive">
+                <label>Try it: ln(</label>
+                <input type="number" id="log1" value="2.718">)
+                <button onclick="calculateLog()">Calculate</button>
+                <p>Result: <span id="log" class="result"></span></p>
+            </div>
+
+            <!-- Log with Base -->
+            <h3>Logarithm with Custom Base</h3>
+            <p>Calculates the logarithm of a number with a specified base.</p>
+            <div class="code-example">
+                function logBase(number, base) {<br>
+                &nbsp;&nbsp;if (number <= 0) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;throw new Error("Cannot calculate logarithm of zero or negative number!");<br>
+                &nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;if (base <= 0 || base === 1) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;throw new Error("Invalid logarithm base!");<br>
+                &nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;return Math.log(number) / Math.log(base);<br>
+                }
+            </div>
+            <div class="interactive">
+                <label>Try it: log base </label>
+                <input type="number" id="logBase2" value="10"> of
+                <input type="number" id="logBase1" value="100">
+                <button onclick="calculateLogBase()">Calculate</button>
+                <p>Result: <span id="logBase" class="result"></span></p>
+            </div>
+        </div>
+
+        <!-- Number Properties Section -->
+        <div class="section">
+            <h2>Number Properties</h2>
+
+            <!-- Sign -->
+            <h3>Sign</h3>
+            <p>Returns the sign of a number: 1 for positive, -1 for negative, 0 for zero.</p>
+            <div class="code-example">
+                function sign(number) {<br>
+                &nbsp;&nbsp;return Math.sign(number);<br>
+                }
+            </div>
+            <div class="interactive">
+                <label>Try it: </label>
+                <input type="number" id="sign1" value="-42">
+                <button onclick="calculateSign()">Get Sign</button>
+                <p>Result: <span id="sign" class="result"></span></p>
+            </div>
+
+            <!-- Clamp -->
+            <h3>Clamp</h3>
+            <p>Restricts a number between a minimum and maximum value.</p>
+            <div class="code-example">
+                function clamp(number, min, max) {<br>
+                &nbsp;&nbsp;return Math.min(Math.max(number, min), max);<br>
+                }
+            </div>
+            <div class="interactive">
+                <label>Clamp </label>
+                <input type="number" id="clamp1" value="15"> between
+                <input type="number" id="clamp2" value="0"> and
+                <input type="number" id="clamp3" value="10">
+                <button onclick="calculateClamp()">Clamp</button>
+                <p>Result: <span id="clamp" class="result"></span></p>
+            </div>
+        </div>
+
+        <!-- Hyperbolic Functions Section -->
+        <div class="section">
+            <h2>Hyperbolic Functions</h2>
+
+            <!-- Sinh -->
+            <h3>Hyperbolic Sine (sinh)</h3>
+            <p>Calculates the hyperbolic sine of a number.</p>
+            <div class="code-example">
+                function sinh(number) {<br>
+                &nbsp;&nbsp;return Math.sinh(number);<br>
+                }
+            </div>
+            <div class="interactive">
+                <label>Try it: sinh(</label>
+                <input type="number" id="sinh1" value="1" step="0.1">)
+                <button onclick="calculateSinh()">Calculate</button>
+                <p>Result: <span id="sinh" class="result"></span></p>
+            </div>
+
+            <!-- Cosh -->
+            <h3>Hyperbolic Cosine (cosh)</h3>
+            <p>Calculates the hyperbolic cosine of a number.</p>
+            <div class="code-example">
+                function cosh(number) {<br>
+                &nbsp;&nbsp;return Math.cosh(number);<br>
+                }
+            </div>
+            <div class="interactive">
+                <label>Try it: cosh(</label>
+                <input type="number" id="cosh1" value="1" step="0.1">)
+                <button onclick="calculateCosh()">Calculate</button>
+                <p>Result: <span id="cosh" class="result"></span></p>
+            </div>
+
+            <!-- Tanh -->
+            <h3>Hyperbolic Tangent (tanh)</h3>
+            <p>Calculates the hyperbolic tangent of a number.</p>
+            <div class="code-example">
+                function tanh(number) {<br>
+                &nbsp;&nbsp;return Math.tanh(number);<br>
+                }
+            </div>
+            <div class="interactive">
+                <label>Try it: tanh(</label>
+                <input type="number" id="tanh1" value="1" step="0.1">)
+                <button onclick="calculateTanh()">Calculate</button>
+                <p>Result: <span id="tanh" class="result"></span></p>
+            </div>
+        </div>
+
+    </body>
+    <script src="mathematical_commands.js"></script>
+    <script>
+        // Calculator functions
+        function calculateAdd() {
+            const a = parseFloat(document.getElementById("add1").value);
+            const b = parseFloat(document.getElementById("add2").value);
+            document.getElementById("addition").textContent = add(a, b);
+        }
+
+        function calculateSubtract() {
+            const a = parseFloat(document.getElementById("sub1").value);
+            const b = parseFloat(document.getElementById("sub2").value);
+            document.getElementById("subtraction").textContent = subtract(a, b);
+        }
+
+        function calculateMultiply() {
+            const a = parseFloat(document.getElementById("mul1").value);
+            const b = parseFloat(document.getElementById("mul2").value);
+            document.getElementById("multiplication").textContent = multiply(a, b);
+        }
+
+        function calculateDivide() {
+            const a = parseFloat(document.getElementById("div1").value);
+            const b = parseFloat(document.getElementById("div2").value);
+            try {
+                document.getElementById("division").textContent = divide(a, b);
+            } catch (error) {
+                document.getElementById("division").textContent = error.message;
+            }
+        }
+
+        function calculatePower() {
+            const base = parseFloat(document.getElementById("pow1").value);
+            const exponent = parseFloat(document.getElementById("pow2").value);
+            document.getElementById("power").textContent = power(base, exponent);
+        }
+
+        function calculateSquareRoot() {
+            const number = parseFloat(document.getElementById("sqrt1").value);
+            try {
+                document.getElementById("squareRoot").textContent = squareRoot(number);
+            } catch (error) {
+                document.getElementById("squareRoot").textContent = error.message;
+            }
+        }
+
+        function calculateAbsolute() {
+            const number = parseFloat(document.getElementById("abs1").value);
+            document.getElementById("absolute").textContent = absolute(number);
+        }
+
+        function calculateRound() {
+            const number = parseFloat(document.getElementById("round1").value);
+            document.getElementById("round").textContent = round(number);
+        }
+
+        function calculateCeil() {
+            const number = parseFloat(document.getElementById("ceil1").value);
+            document.getElementById("ceil").textContent = ceil(number);
+        }
+
+        function calculateFloor() {
+            const number = parseFloat(document.getElementById("floor1").value);
+            document.getElementById("floor").textContent = floor(number);
+        }
+
+        function calculateTruncate() {
+            const number = parseFloat(document.getElementById("trunc1").value);
+            const decimals = parseInt(document.getElementById("trunc2").value);
+            document.getElementById("truncate").textContent = truncate(number, decimals);
+        }
+
+        function calculateRandomBetween() {
+            const min = parseFloat(document.getElementById("rand1").value);
+            const max = parseFloat(document.getElementById("rand2").value);
+            document.getElementById("random").textContent = randomBetween(min, max).toFixed(3);
+        }
+
+        function calculateRandomIntBetween() {
+            const min = parseInt(document.getElementById("randInt1").value);
+            const max = parseInt(document.getElementById("randInt2").value);
+            document.getElementById("randomInt").textContent = randomIntBetween(min, max);
+        }
+
+        function calculateLog() {
+            const number = parseFloat(document.getElementById("log1").value);
+            try {
+                document.getElementById("log").textContent = log(number).toFixed(4);
+            } catch (error) {
+                document.getElementById("log").textContent = error.message;
+            }
+        }
+
+        function calculateLogBase() {
+            const number = parseFloat(document.getElementById("logBase1").value);
+            const base = parseFloat(document.getElementById("logBase2").value);
+            try {
+                document.getElementById("logBase").textContent = logBase(number, base).toFixed(4);
+            } catch (error) {
+                document.getElementById("logBase").textContent = error.message;
+            }
+        }
+
+        function calculateSign() {
+            const number = parseFloat(document.getElementById("sign1").value);
+            document.getElementById("sign").textContent = sign(number);
+        }
+
+        function calculateClamp() {
+            const number = parseFloat(document.getElementById("clamp1").value);
+            const min = parseFloat(document.getElementById("clamp2").value);
+            const max = parseFloat(document.getElementById("clamp3").value);
+            document.getElementById("clamp").textContent = clamp(number, min, max);
+        }
+
+        function calculateSinh() {
+            const number = parseFloat(document.getElementById("sinh1").value);
+            document.getElementById("sinh").textContent = sinh(number).toFixed(4);
+        }
+
+        function calculateCosh() {
+            const number = parseFloat(document.getElementById("cosh1").value);
+            document.getElementById("cosh").textContent = cosh(number).toFixed(4);
+        }
+
+        function calculateTanh() {
+            const number = parseFloat(document.getElementById("tanh1").value);
+            document.getElementById("tanh").textContent = tanh(number).toFixed(4);
+        }
+
+        // Initialize all calculations
+        window.onload = function() {
+            calculateAdd();
+            calculateSubtract();
+            calculateMultiply();
+            calculateDivide();
+            calculatePower();
+            calculateSquareRoot();
+            calculateAbsolute();
+            calculateRound();
+            calculateCeil();
+            calculateFloor();
+            calculateTruncate();
+            calculateRandomBetween();
+            calculateRandomIntBetween();
+            calculateLog();
+            calculateLogBase();
+            calculateSign();
+            calculateClamp();
+            calculateSinh();
+            calculateCosh();
+            calculateTanh();
+        }
+    </script>
+</html>

@@ -208,34 +208,187 @@ function tan(degrees) {
     return Math.tan(degreesToRadians(degrees));
 }
 
-// Export all functions for use in other files
-module.exports = {
-    // Basic Operations
-    add,
-    subtract,
-    multiply,
-    divide,
-    
-    // Advanced Operations
-    power,
-    squareRoot,
-    absolute,
-    
-    // Geometry
-    rectangleArea,
-    circleArea,
-    cubeVolume,
-    
-    // Statistics
-    mean,
-    median,
-    mode,
-    
-    // Trigonometry
-    degreesToRadians,
-    radiansToDegrees,
-    sin,
-    cos,
-    tan
-};
+// ====== Additional Math Functions ======
 
+/**
+ * Rounds a number to the nearest integer
+ * @param {number} number - The number to round
+ * @returns {number} The rounded number
+ */
+function round(number) {
+    return Math.round(number);
+}
+
+/**
+ * Rounds a number up to the nearest integer
+ * @param {number} number - The number to round up
+ * @returns {number} The rounded up number
+ */
+function ceil(number) {
+    return Math.ceil(number);
+}
+
+/**
+ * Rounds a number down to the nearest integer
+ * @param {number} number - The number to round down
+ * @returns {number} The rounded down number
+ */
+function floor(number) {
+    return Math.floor(number);
+}
+
+/**
+ * Generates a random number between min (inclusive) and max (exclusive)
+ * @param {number} min - The minimum value
+ * @param {number} max - The maximum value (exclusive)
+ * @returns {number} A random number between min and max
+ */
+function randomBetween(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+/**
+ * Generates a random integer between min (inclusive) and max (inclusive)
+ * @param {number} min - The minimum value
+ * @param {number} max - The maximum value (inclusive)
+ * @returns {number} A random integer between min and max
+ */
+function randomIntBetween(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+/**
+ * Calculates the natural logarithm (base e) of a number
+ * @param {number} number - The number to calculate logarithm for
+ * @returns {number} Natural logarithm of the number
+ * @throws {Error} If trying to calculate logarithm of negative number or zero
+ */
+function log(number) {
+    if (number <= 0) {
+        throw new Error("Cannot calculate logarithm of zero or negative number!");
+    }
+    return Math.log(number);
+}
+
+/**
+ * Calculates the logarithm of a number with a specified base
+ * @param {number} number - The number to calculate logarithm for
+ * @param {number} base - The base of the logarithm
+ * @returns {number} Logarithm of the number with specified base
+ * @throws {Error} If trying to calculate logarithm of negative number or zero
+ */
+function logBase(number, base) {
+    if (number <= 0) {
+        throw new Error("Cannot calculate logarithm of zero or negative number!");
+    }
+    if (base <= 0 || base === 1) {
+        throw new Error("Invalid logarithm base!");
+    }
+    return Math.log(number) / Math.log(base);
+}
+
+/**
+ * Truncates decimal places from a number
+ * @param {number} number - The number to truncate
+ * @param {number} decimals - Number of decimal places to keep
+ * @returns {number} Truncated number
+ */
+function truncate(number, decimals = 0) {
+    const factor = Math.pow(10, decimals);
+    return Math.trunc(number * factor) / factor;
+}
+
+/**
+ * Returns the sign of a number: 1 for positive, -1 for negative, 0 for zero
+ * @param {number} number - The number to check
+ * @returns {number} The sign of the number
+ */
+function sign(number) {
+    return Math.sign(number);
+}
+
+/**
+ * Clamps a number between a minimum and maximum value
+ * @param {number} number - The number to clamp
+ * @param {number} min - The minimum value
+ * @param {number} max - The maximum value
+ * @returns {number} The clamped number
+ */
+function clamp(number, min, max) {
+    return Math.min(Math.max(number, min), max);
+}
+
+/**
+ * Returns the maximum of two or more numbers
+ * @param {...number} numbers - Numbers to compare
+ * @returns {number} The largest number
+ */
+function maximum(...numbers) {
+    return Math.max(...numbers);
+}
+
+/**
+ * Returns the minimum of two or more numbers
+ * @param {...number} numbers - Numbers to compare
+ * @returns {number} The smallest number
+ */
+function minimum(...numbers) {
+    return Math.min(...numbers);
+}
+
+/**
+ * Checks if a number is an integer
+ * @param {number} number - The number to check
+ * @returns {boolean} True if the number is an integer
+ */
+function isInteger(number) {
+    return Number.isInteger(number);
+}
+
+/**
+ * Checks if a number is finite
+ * @param {number} number - The number to check
+ * @returns {boolean} True if the number is finite
+ */
+function isFinite(number) {
+    return Number.isFinite(number);
+}
+
+/**
+ * Formats a number to a specified number of decimal places
+ * @param {number} number - The number to format
+ * @param {number} decimals - Number of decimal places
+ * @returns {number} The formatted number
+ */
+function toFixed(number, decimals = 2) {
+    return Number(number.toFixed(decimals));
+}
+
+/**
+ * Calculates the hyperbolic sine of a number
+ * @param {number} number - The number
+ * @returns {number} The hyperbolic sine
+ */
+function sinh(number) {
+    return Math.sinh(number);
+}
+
+/**
+ * Calculates the hyperbolic cosine of a number
+ * @param {number} number - The number
+ * @returns {number} The hyperbolic cosine
+ */
+function cosh(number) {
+    return Math.cosh(number);
+}
+
+/**
+ * Calculates the hyperbolic tangent of a number
+ * @param {number} number - The number
+ * @returns {number} The hyperbolic tangent
+ */
+function tanh(number) {
+    return Math.tanh(number);
+}
