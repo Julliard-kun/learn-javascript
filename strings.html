@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Learn JavaScript Strings</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 1000px;
+                margin: 0 auto;
+                padding: 20px;
+                line-height: 1.6;
+            }
+            .section {
+                margin-bottom: 30px;
+                padding: 20px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+
+            .interactive {
+                margin: 15px 0;
+                padding: 15px;
+                background-color: #f0fff2;
+                border-radius: 5px;
+            }
+
+            .functionButton {
+                padding: 5px 10px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 3px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Learn JavaScript Strings</h1>
+        <p>Welcome to the interactive strings learning page! Here you can learn about different string operations in JavaScript and try them out yourself.</p>
+
+        <p>String Rules:
+            <ul>
+                <li>Strings are sequences of characters enclosed in single or double quotes.</li>
+                <li>When you used typeof to check a string, you need to use quotes around the string to not get the result "undefined".</li>
+                <li>When you concatenate a string and a number, the number will be converted to a string.</li>
+                <li>Strings are immutable, meaning they cannot be changed after creation.</li>
+            </ul>
+        </p>
+
+        <div class="section">
+            <h2>Concatenation</h2>
+            <p>Concatenation is the process of combining two strings together.</p>
+            <div class="code-example">
+                concat() is a built-in function that combines two strings together.
+            </div>
+            <div class="interactive">
+                <label>Try it:</label>
+                <input type="text" id="concat1" value="Hello">
+                <input type="text" id="concat2" value="World">
+                <button class="functionButton"onclick="concatenateUsingConcat(concat1.value, concat2.value)">Concatenate</button>
+                <p>Result: <span id="concatResult" class="result"></span></p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Length</h2>
+            <p>Length is the number of characters in a string.></p>
+            <div class="code-example">
+                length is a built-in property that returns the number of characters in a string.
+            </div>
+            <div class="interactive">
+                <label>Try it:</label>
+                <input type="text" id="length1" value="Hello length">
+                <button class="functionButton" onclick="getStringLength(length1.value)">Get String Length</button>
+                <p>Result: <span id="lengthResult" class="result"></span></p>
+            </div>
+        </div>
+        
+    </body>
+
+    <script src="strings.js"></script>
+
+</html>
