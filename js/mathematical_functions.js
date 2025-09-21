@@ -2,7 +2,6 @@
  * Comprehensive Mathematical Functions for JavaScript Learning
  * This file contains various mathematical operations to help understand JavaScript math concepts
  */
-
 // ====== Basic Arithmetic Operations ======
 
 /**

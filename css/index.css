@@ -1,0 +1,9 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.indexHeader {
+    overflow: hidden;
+    text-align: center;
+    background-color: #f1f1f1;
+}
