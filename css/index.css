@@ -1,9 +1,33 @@
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .indexHeader {
-    overflow: hidden;
-    text-align: center;
-    background-color: #f1f1f1;
+    background: linear-gradient(to right, #4CAF50, #45a049);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.indexHeaderLogo {
+    width: 50px;
+    height:50px;
+    border-radius: 50%;
+    
+}
+
+.indexHeader h1 {
+    margin: 0;
+    padding: 0;
+    padding-left: 20px;
+}
+
+.indexMain {
+    background-color: #c5ffbc;
+    margin: 0;
+    padding: 20px;
 }
