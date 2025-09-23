@@ -2,23 +2,40 @@
 <html lang="en">
     <head>
         <Title>Homepage</Title>
+        <!-- CSS -->
         <link rel="stylesheet" href="css/index.css">
-        
+        <!-- Font Awesome - Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Comfortaa:wght@300;400;500;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     </head>
     <body>
-        <header class="indexHeader">
-            <img class="indexHeaderLogo" src="images/J-kun-logo-rounded.png" alt="Logo">
+        <header class="index-header">
+            <img class="index-header-logo" src="images/J-kun-logo-rounded.png" alt="Logo">
             <h1>Homepage</h1>
             
         </header>
 
-        <main class="indexMain">
-            <p>Welcome to the homepage of the Javascript learning website.</p>
-            <div class="container">
-                <button class="containerButton" onclick="gotoMathematicalFunctions()">Mathematical Commands</button>
-                <button class="containerButton" onclick="gotoStringsFunctions()">String Functions</button>
+        <main class="index-main">
+            <div class="index-content-1">
+                <h1 class="index-main-title">Learning Javascript</h1>
+                <p class="index-main-description">Welcome to the homepage of the Javascript learning website.</p>
+                <p class="index-main-description">Creating my website for learning javascript.</p>
+                <button class="index-main-button" onclick="gotoIndex()"><i class="fas fa-play-circle"></i> Start Learning</button>
+            </div>
+
+            <div class="index-content-2">
+                <div class="index-content-2-image"><img src="images/learning-something.png" alt="Javascript Logo"></div>
             </div>
         </main>
+
+        <section class="index-section">
+            <div class="container">
+                <button class="container-button" onclick="gotoMathematicalFunctions()"><i class="fas fa-calculator"></i> Mathematical Commands</button>
+                <button class="container-button" onclick="gotoStringsFunctions()"><i class="fas fa-font"></i> String Functions</button>
+            </div>
+
+        </section>
 
     </body>
 
