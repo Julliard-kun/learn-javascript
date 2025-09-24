@@ -51,12 +51,29 @@ body {
 
 }
 
-
 .index-main-button {
     padding: 10px 20px;
     background-color: #4CAF50;
     color: white;
     border: 1px solid seagreen;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+.index-section {
+    background: linear-gradient(135deg, #a8e6cf 0%, #88d8a3 50%, #6db4c4 100%);
+    margin: 20px auto;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.container-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
     cursor: pointer;
 }
